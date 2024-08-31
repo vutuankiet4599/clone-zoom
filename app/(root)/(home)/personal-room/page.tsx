@@ -4,6 +4,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useGetCallById } from "@/hooks/useGetCallById";
 import { useUser } from "@clerk/nextjs";
 import { useStreamVideoClient } from "@stream-io/video-react-sdk";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -79,7 +80,15 @@ const PersonalRoom = () => {
                         navigator.clipboard.writeText(meetingLink);
                         toast({ title: "Link copied" });
                     }}
-                ></Button>
+                >
+                    <Image
+                        src="/icons/copy.svg"
+                        alt="feature"
+                        width={20}
+                        height={20}
+                    />
+                    &nbsp; Copy Link
+                </Button>
             </div>
         </section>
     );
